@@ -1,4 +1,4 @@
-_start_distance = 75;
+_start_distance = 85;
 _max_distance = 500;
 _max_shots = 5;
 _max_delay = 39;

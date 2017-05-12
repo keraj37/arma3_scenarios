@@ -3,8 +3,8 @@ private ["_this_speed","_this_formation"];
 _min_groups = 10;		// The mimimum number of groups that will be created
 _max_groups = 10;		// The maximum number of groups that will be created. This number CANNOT exceed 8
 
-_min_group_size = 1;	// The minimum number of people a group can contain
-_max_group_size = 15;	// The maximum number of people a group can contain.
+_min_group_size = 3;	// The minimum number of people a group can contain
+_max_group_size = 13;	// The maximum number of people a group can contain.
 
 _start_distance = 100;		// This is the minimum spawn distance for a group from the trigger point
 _max_distance = 500;	// This is the maximum spawn distance for a group from the trigger point

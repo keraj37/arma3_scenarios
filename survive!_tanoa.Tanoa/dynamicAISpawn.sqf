@@ -9,7 +9,7 @@ _max_group_size = 7;	// The maximum number of people a group can contain.
 _start_distance = 350;		// This is the minimum spawn distance for a group from the trigger point
 _max_distance = 700;	// This is the maximum spawn distance for a group from the trigger point
 
-_skill = 0.222;
+_skillBase = 0.14;
 
 _max_enemy_distance = 250;	// This is the maximum distance a group can be from the player as the group follows the player around
 _min_enemy_distance = 50;
@@ -24,11 +24,6 @@ _formation_type=["NO CHANGE","COLUMN","STAG COLUMN","WEDGE","ECH LEFT","ECH RIGH
  
 _formation_odds = [100,90,80,70,60,50,40,30,20,10];
 
-_group_skill=[_skill, _skill + 0.1, _skill + 0.1, 0.5, 0.6, 0.7, 0.8, 0.9];
-_group_skill_level=["Novice","Rookie","Rookie","Recruit","Recruit","Veteran","Veteran","Expert"];
-
-_skill_odds=[100, 0, 0, 0, 0, 0, 0, 0];		// Must contain the same number of entries as _group_skill
-
 _number_groups = floor(random (_max_groups - _min_groups)) + _min_groups;
 
 _man_number = count _man_type;
@@ -37,11 +32,7 @@ _formation_count = count _formation_type;
 
 private ["_i", "_j", "_k",  "_odds", "_table_odds", "_this_man", "_skill_level"];
 
-_skill_count = (count _group_skill) - 1;
-
 _group_counter = 0;	
-
-_skill_index = 0;
 
 _all_groups = [];
 
@@ -79,19 +70,7 @@ while {alive player} do
 		_spawn_position set [2, _zpos];
 
 		_odds = random (100);
-		
-		for "_i" from 0 to _skill_count do
-		{
-			_table_odds = _skill_odds select _i;
-
-			if (_odds < _table_odds) then
-			{
-				_skill_index = _i;					
-			};
-		};
-
-		_skill_level = _group_skill select _skill_index;
-		_skill_level_name = _group_skill_level select _skill_index;
+		_skill_level = _skillBase + (random 1);		
 
 		for "_i" from 0 to (_group_size - 1) do
 		{
@@ -107,7 +86,7 @@ while {alive player} do
 			};
 
 			_man = _man_type select _this_man;
-			_man createUnit [_spawn_position, _this_group,"this allowFleeing 0", _skill_level, "Private"];			
+			_man createUnit [_spawn_position, _this_group, "this allowFleeing 0", _skill_level, "Private"];			
 		};
 
 		_formation = _formation_type select floor random count _formation_type;
@@ -130,9 +109,7 @@ while {alive player} do
 		
 		{_x addEventHandler ["killed", {_this exec "enemyKilled.sqf";}];} forEach units _this_group;
 		{_x addEventHandler ["hit", {_this select 0 setDamage 1}];} forEach units _this_group;
-				
-		{if ((side _x) == EAST) then {_x addEventHandler ;}} forEach allUnits;
-				
+						
 		if(!_firstSpawn) then
 		{		
 			cutText [format ["NEW ENEMY GROUP OF %1 MAN IS CHASING YOU!", _group_size], "PLAIN DOWN", 1];			

@@ -1,15 +1,15 @@
 private ["_this_speed","_this_formation"];
 
-_min_groups = 15;		// The mimimum number of groups that will be created
-_max_groups = 15;		// The maximum number of groups that will be created. This number CANNOT exceed 8
+_min_groups = 6;		// The mimimum number of groups that will be created
+_max_groups = 6;		// The maximum number of groups that will be created. This number CANNOT exceed 8
 
 _min_group_size = 2;	// The minimum number of people a group can contain
-_max_group_size = 7;	// The maximum number of people a group can contain.
+_max_group_size = 9;	// The maximum number of people a group can contain.
 
 _start_distance = 350;		// This is the minimum spawn distance for a group from the trigger point
 _max_distance = 700;	// This is the maximum spawn distance for a group from the trigger point
 
-_skillBase = 0.14;
+_skillBase = 0.16;
 
 _max_enemy_distance = 250;	// This is the maximum distance a group can be from the player as the group follows the player around
 _min_enemy_distance = 50;
@@ -30,7 +30,7 @@ _man_number = count _man_type;
 
 _formation_count = count _formation_type;
 
-private ["_i", "_j", "_k",  "_odds", "_table_odds", "_this_man", "_skill_level"];
+private ["_i", "_j", "_k",  "_odds", "_table_odds", "_this_man"];
 
 _group_counter = 0;	
 
@@ -69,8 +69,7 @@ while {alive player} do
 		_spawn_position set [1, _ypos];
 		_spawn_position set [2, _zpos];
 
-		_odds = random (100);
-		_skill_level = _skillBase + (random 1);		
+		_odds = random (100);			
 
 		for "_i" from 0 to (_group_size - 1) do
 		{
@@ -86,7 +85,7 @@ while {alive player} do
 			};
 
 			_man = _man_type select _this_man;
-			_man createUnit [_spawn_position, _this_group, "this allowFleeing 0", _skill_level, "Private"];			
+			_man createUnit [_spawn_position, _this_group, "this allowFleeing 0", _skillBase + random 0.1, "Private"];			
 		};
 
 		_formation = _formation_type select floor random count _formation_type;

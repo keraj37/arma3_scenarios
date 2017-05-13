@@ -4,14 +4,17 @@ removeAllWeapons player;
 removeAllAssignedItems player;
 
 player addBackpack "B_Carryall_oli"; 
-(unitBackpack this) addWeaponCargoGlobal ["30Rnd_556x45_Stanag", 6]; 
-(unitBackpack this) addMagazineCargoGlobal ["1Rnd_HE_Grenade_shell", 10];
+(unitBackpack player) addMagazineCargoGlobal ["30Rnd_556x45_Stanag", 25]; 
+(unitBackpack player) addMagazineCargoGlobal ["1Rnd_HE_Grenade_shell", 25];
 
 player addMagazines ["30Rnd_556x45_Stanag", 8];
 player addMagazines ["1Rnd_HE_Grenade_shell", 15];
 player addWeapon "arifle_SPAR_01_GL_blk_F";
 player addPrimaryWeaponItem "optic_ACO_grn";
+player addPrimaryWeaponItem "acc_flashlight";
 player addItem "FirstAidKit";
+player addItem "O_NVGoggles_ghex_F";
+player assignItem "O_NVGoggles_ghex_F";
 player addWeapon "ItemMap";
 
 countTotalEnemy = {
@@ -19,22 +22,14 @@ countTotalEnemy = {
 	_totalEnemy
 };
 
-showScore = {
-	cutText [format ["ELIMINATED ENEMIES: %1.", totalKills], "PLAIN DOWN", 1];
-};
-
-player addAction ["Show my score", showScore];
-
 player addEventHandler ["killed", {_this exec "playerDied.sqf";}];
 
 totalKills = 0;
 
 sleep 2;
 
-playSound "Alarm_OPFOR";
-
 [
-  format ["ELIMINATE AS MUCH AS POSSIBLE!. %1 ENEMIES DETECTED.", call countTotalEnemy],
+  "YOU ARE CHASED BY ALARMED ENEMY GROUPS!",
   0,
   0,
   8,

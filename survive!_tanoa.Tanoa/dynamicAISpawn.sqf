@@ -1,18 +1,18 @@
 private ["_this_speed","_this_formation"];
 
-_min_groups = 10;		// The mimimum number of groups that will be created
-_max_groups = 10;		// The maximum number of groups that will be created. This number CANNOT exceed 8
+_min_groups = 6;		// The mimimum number of groups that will be created
+_max_groups = 6;		// The maximum number of groups that will be created. This number CANNOT exceed 8
 
-_min_group_size = 3;	// The minimum number of people a group can contain
-_max_group_size = 13;	// The maximum number of people a group can contain.
+_min_group_size = 2;	// The minimum number of people a group can contain
+_max_group_size = 7;	// The maximum number of people a group can contain.
 
-_start_distance = 250;		// This is the minimum spawn distance for a group from the trigger point
-_max_distance = 600;	// This is the maximum spawn distance for a group from the trigger point
+_start_distance = 350;		// This is the minimum spawn distance for a group from the trigger point
+_max_distance = 700;	// This is the maximum spawn distance for a group from the trigger point
 
 _skill = 0.222;
 
 _max_enemy_distance = 250;	// This is the maximum distance a group can be from the player as the group follows the player around
-_min_enemy_distance = 60;
+_min_enemy_distance = 50;
 
 _man_type=["O_Soldier_F","O_officer_F","O_Soldier_GL_F","O_Soldier_AR_F","O_Soldier_AT_F"];
 
@@ -132,7 +132,7 @@ while {alive player} do
 		
 		if(!_firstSpawn) then
 		{		
-			cutText [format ["NEW ENEMY GROUP DETECTED OF %1 MAN", _group_size], "PLAIN DOWN",1];			
+			cutText [format ["NEW ENEMY GROUP OF %1 MAN IS CHASING YOU!", _group_size], "PLAIN DOWN", 1];			
 		};
 	};
 

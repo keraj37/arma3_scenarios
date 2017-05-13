@@ -11,10 +11,10 @@ player addMagazines ["30Rnd_556x45_Stanag", 8];
 player addMagazines ["1Rnd_HE_Grenade_shell", 15];
 player addWeapon "arifle_SPAR_01_GL_blk_F";
 player addPrimaryWeaponItem "optic_ACO_grn";
-player addPrimaryWeaponItem "acc_flashlight";
+//player addPrimaryWeaponItem "acc_flashlight";
 player addItem "FirstAidKit";
-player addItem "O_NVGoggles_ghex_F";
-player assignItem "O_NVGoggles_ghex_F";
+//player addItem "O_NVGoggles_ghex_F";
+//player assignItem "O_NVGoggles_ghex_F";
 player addWeapon "ItemMap";
 
 countTotalEnemy = {

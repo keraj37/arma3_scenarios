@@ -1,7 +1,7 @@
 private ["_this_speed","_this_formation"];
 
-_min_groups = 6;		// The mimimum number of groups that will be created
-_max_groups = 6;		// The maximum number of groups that will be created. This number CANNOT exceed 8
+_min_groups = 15;		// The mimimum number of groups that will be created
+_max_groups = 15;		// The maximum number of groups that will be created. This number CANNOT exceed 8
 
 _min_group_size = 2;	// The minimum number of people a group can contain
 _max_group_size = 7;	// The maximum number of people a group can contain.
@@ -129,7 +129,10 @@ while {alive player} do
 		_group_counter = _group_counter + 1;
 		
 		{_x addEventHandler ["killed", {_this exec "enemyKilled.sqf";}];} forEach units _this_group;
-		
+		{_x addEventHandler ["hit", {_this select 0 setDamage 1}];} forEach units _this_group;
+				
+		{if ((side _x) == EAST) then {_x addEventHandler ;}} forEach allUnits;
+				
 		if(!_firstSpawn) then
 		{		
 			cutText [format ["NEW ENEMY GROUP OF %1 MAN IS CHASING YOU!", _group_size], "PLAIN DOWN", 1];			

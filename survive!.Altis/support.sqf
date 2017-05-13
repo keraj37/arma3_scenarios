@@ -1,3 +1,5 @@
+playSound "c_in1_20_broadcast_SPE_0";
+
 cutText ["SUPPORT IS COMMING!", "PLAIN",1];
 
 support_veh setFuel 1;

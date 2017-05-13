@@ -16,11 +16,27 @@ countTotalEnemy = {
 	_totalEnemy
 };
 
-player addAction ["Show my score", {cutText [format ["ELIMINATED ENEMIES: %1.", totalKills], "PLAIN DOWN", 1];}];
+showScore = {
+	cutText [format ["ELIMINATED ENEMIES: %1.", totalKills], "PLAIN DOWN", 1];
+};
+
+player addAction ["Show my score", showScore];
+
+player addEventHandler ["killed", {_this exec "playerDied.sqf";}];
 
 totalKills = 0;
 
 sleep 2;
 
-cutText [format ["ELIMINATE AS MUCH AS POSSIBLE!.\n %1 ENEMIES DETECTED.", call countTotalEnemy], "PLAIN DOWN", 1];	
+playSound "Alarm_OPFOR";
+
+[
+  format ["ELIMINATE AS MUCH AS POSSIBLE!. %1 ENEMIES DETECTED.", call countTotalEnemy],
+  0,
+  0,
+  8,
+  1
+] 
+call BIS_fnc_DynamicText;
+
 [] execVM "arty.sqf";

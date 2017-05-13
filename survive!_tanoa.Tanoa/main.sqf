@@ -3,8 +3,12 @@
 removeAllWeapons player;
 removeAllAssignedItems player;
 
-player addMagazines ["30Rnd_556x45_Stanag", 5];
-player addMagazines ["1Rnd_HE_Grenade_shell", 8];
+player addBackpack "B_Carryall_oli"; 
+(unitBackpack this) addWeaponCargoGlobal ["30Rnd_556x45_Stanag", 6]; 
+(unitBackpack this) addMagazineCargoGlobal ["1Rnd_HE_Grenade_shell", 10];
+
+player addMagazines ["30Rnd_556x45_Stanag", 8];
+player addMagazines ["1Rnd_HE_Grenade_shell", 15];
 player addWeapon "arifle_SPAR_01_GL_blk_F";
 player addPrimaryWeaponItem "optic_ACO_grn";
 player addItem "FirstAidKit";

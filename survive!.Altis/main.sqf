@@ -11,10 +11,16 @@ player addItem "FirstAidKit";
 player addMagazines ["handGrenade", 2];
 player addWeapon "ItemMap";
 
+countTotalEnemy = {
+	_totalEnemy = {alive _x && side _x == EAST} count allUnits;
+	_totalEnemy
+};
+
+player addAction ["Show my score", {cutText [format ["ELIMINATED ENEMIES: %1.", totalKills], "PLAIN DOWN", 1];}];
+
 totalKills = 0;
 
 sleep 2;
 
-_totalEnemy = {alive _x && side _x == EAST} count allUnits;
-cutText [format ["YOUR MISSION IS TO SURVIVE.\n %1 ENEMIES DETECTED.", _totalEnemy], "PLAIN",1];	
+cutText [format ["ELIMINATE AS MUCH AS POSSIBLE!.\n %1 ENEMIES DETECTED.", call countTotalEnemy], "PLAIN DOWN", 1];	
 [] execVM "arty.sqf";

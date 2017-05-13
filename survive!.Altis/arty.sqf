@@ -1,7 +1,7 @@
 _start_distance = 85;
 _max_distance = 500;
 _max_shots = 5;
-_max_delay = 39;
+_max_delay = 69;
 
 getRandomPosition = {
 	_target_position = position player;

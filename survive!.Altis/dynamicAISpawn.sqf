@@ -132,7 +132,7 @@ while {alive player} do
 		
 		if(!_firstSpawn) then
 		{		
-			cutText [format ["NEW ENEMY GROUP DETECTED OF %1 MAN", _group_size], "PLAIN",1];			
+			cutText [format ["NEW ENEMY GROUP DETECTED OF %1 MAN", _group_size], "PLAIN DOWN",1];			
 		};
 	};
 

@@ -1,0 +1,1 @@
+cutText [format ["YOUR FINAL SCORE: %1.", totalKills], "PLAIN", 4];

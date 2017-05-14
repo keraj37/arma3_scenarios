@@ -1,17 +1,17 @@
 private ["_this_speed","_this_formation"];
 
-_min_groups = 6;		// The mimimum number of groups that will be created
-_max_groups = 6;		// The maximum number of groups that will be created. This number CANNOT exceed 8
+_min_groups = 7;		// The mimimum number of groups that will be created
+_max_groups = 7;		// The maximum number of groups that will be created. This number CANNOT exceed 8
 
-_min_group_size = 2;	// The minimum number of people a group can contain
+_min_group_size = 3;	// The minimum number of people a group can contain
 _max_group_size = 9;	// The maximum number of people a group can contain.
 
 _start_distance = 350;		// This is the minimum spawn distance for a group from the trigger point
 _max_distance = 700;	// This is the maximum spawn distance for a group from the trigger point
 
-_skillBase = 0.16;
+_skillBase = 0.19;
 
-_max_enemy_distance = 250;	// This is the maximum distance a group can be from the player as the group follows the player around
+_max_enemy_distance = 190;	// This is the maximum distance a group can be from the player as the group follows the player around
 _min_enemy_distance = 50;
 
 _man_type=["O_Soldier_F","O_officer_F","O_Soldier_GL_F","O_Soldier_AR_F","O_Soldier_AT_F"];

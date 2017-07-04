@@ -8,10 +8,7 @@ PLP_fnc_revive = {
 	_speaker = speaker _this ;
 	_loadout = getUnitLoadout _this ;
 	_wpnCargo = getWeaponCargo (_pos nearestObject "weaponHolderSimulated") ;
-	
-	_vehicle = vehicle _this;
-	_vehicle setDamage 0; 
-	
+		
 	_group = createGroup east;
 	_unit = _group createUnit [_type,_pos,[],3,"NONE"] ;
 	_unit setDir _dir ;
@@ -29,17 +26,33 @@ PLP_fnc_revive = {
 player addAction [
 	"Revive all",
 	{
-		{ _x call PLP_fnc_revive; } forEach allDead;		
+		{ _x call PLP_fnc_revive; } forEach allDead;
+		
+		{
+			if(!alive _x) then
+			{			
+				_x setDamage [0, false]; 	
+				_x setVehicleArmor 1;
+			};
+		} foreach allMissionObjects "LandVehicle";		
 	},
 	nil,1.5,false,true,""
 ] ;
 
 player addAction [
-	"Reload vehicle",
+	"Reset vehicle",
 	{
 		_vehicle = vehicle player;
-		_vehicle setVehicleAmmo 1;		
+		_vehicle setVehicleAmmo 1;
+		_vehicle setDamage [0, false]; 		
 	},
 	nil,1.5,false,true,""
 ] ;
+
+while {alive player} do {
+        waitUntil {inputAction "User1" > 0};
+		_vehicle = vehicle player;
+		_vehicle setVehicleAmmo 1;
+		_vehicle setDamage [0, false]; 	
+    };
 

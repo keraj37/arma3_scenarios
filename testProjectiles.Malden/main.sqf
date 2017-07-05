@@ -7,7 +7,7 @@ player addAction [
 			player
 		];
 		
-		_veh = "CUP_O_T90_RU" createVehicle (_ins select 0 select 0);		
+		_veh = "rhs_bmd2" createVehicle (_ins select 0 select 0);		
 		createVehicleCrew _veh;	
 	},
 	nil,1.5,false,true,""
@@ -22,7 +22,7 @@ player addAction [
 			player
 		];
 		
-		_veh = "C_Offroad_01_F" createVehicle (_ins select 0 select 0);		
+		_veh = "rhs_bmd4m_vdv" createVehicle (_ins select 0 select 0);		
 		createVehicleCrew _veh;   		
 	},
 	nil,1.5,false,true,""
@@ -70,6 +70,8 @@ player addAction [
 C_Offroad_01_F
 CUP_O_T90_RU
 CUP_O_BRDM2_RUS
+rhs_bmd2
+rhs_bmd4m_vdv
 */
 
 replaceProjectile =   

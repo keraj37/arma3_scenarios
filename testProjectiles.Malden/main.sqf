@@ -95,6 +95,15 @@ player addEventHandler
 ];
 
 /*
+Sh_125mm_HEAT
+Sh_105mm_HEAT_MP
+rhs_ammo_smaw_HEAA
+rhs_ammo_m21OF_HE
+rhs_ammo_Hydra_M229_Heli
+rhs_ammo_Hydra_HE_A10
+rhs_ammo_Hellfire_AT_penetrator
+rhs_ammo_heat_tandem
+rhs_ammo_40mmHEDP_penetrator
 B_20mm
 B_40mm_APFSDS
 B_35mm_AA

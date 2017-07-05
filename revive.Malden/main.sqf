@@ -54,5 +54,4 @@ while {alive player} do {
 		_vehicle = vehicle player;
 		_vehicle setVehicleAmmo 1;
 		_vehicle setDamage [0, false]; 	
-    };
-
+    }; 

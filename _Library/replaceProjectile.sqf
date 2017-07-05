@@ -5,7 +5,7 @@ replaceProjectile =
 
 	_nProjectile = createVehicle["rhs_ammo_3WOF27", _finalPos,[], 0, "CAN_COLLIDE"];	
 	_direction = _this weaponDirection currentWeapon _this;
-	_velocity = _direction vectorMultiply 500;
+	_velocity = _direction vectorMultiply 2500;
 	_nProjectile setVelocity _velocity;
 	_this setVehicleAmmo 1;
 };  

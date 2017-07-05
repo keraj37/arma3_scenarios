@@ -23,4 +23,6 @@ B_40mm_APFSDS
 B_35mm_AA
 Cluster_155mm_AMOS
 G_40mm_HE
+M_Mo_155mm_AT
+Sh_120mm_HE
 */

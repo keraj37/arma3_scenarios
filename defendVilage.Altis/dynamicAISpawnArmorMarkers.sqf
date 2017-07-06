@@ -57,11 +57,13 @@ while {alive player} do
 	{
 		_this_group = _all_groups select _i;		
 		
-		if (({alive _x} count units _this_group) < 1) then
 		{
-			_groupsToRemove = _groupsToRemove + [_this_group];
-			_howManyGroupsDead = _howManyGroupsDead + 1;
-		};
+			if ({alive _x} count crew _x == 0) then
+			{
+				_groupsToRemove = _groupsToRemove + [_this_group];
+				_howManyGroupsDead = _howManyGroupsDead + 1;
+			};
+		} forEach units _this_group;		
 	};
 	
 	_group_counter = _group_counter - _howManyGroupsDead;

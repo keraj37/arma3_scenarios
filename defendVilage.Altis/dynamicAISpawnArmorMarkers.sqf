@@ -1,8 +1,6 @@
-_max_groups = 15; 
-_max_group_size = 5;
-_min_group_size = 2;
-
-if (isNil ("marker_0")) then {hint "marker is not there or misspelled"};
+_max_groups = 10; 
+_max_group_size = 3;
+_min_group_size = 1;
 
 _markers = allMapMarkers;
 

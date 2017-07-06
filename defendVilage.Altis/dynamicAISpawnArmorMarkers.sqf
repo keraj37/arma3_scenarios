@@ -1,9 +1,15 @@
 _max_groups = 15; 
 _max_group_size = 5;
 _min_group_size = 2;
-_markers = [marker_0, marker_1, marker_2, marker_3, marker_4, marker_5, marker_6, marker_7, marker_8, marker_9, marker_10, marker_11, marker_12];
+
+if (isNil ("marker_0")) then {hint "marker is not there or misspelled"};
+
+_markers = allMapMarkers;
 
 _all_groups = [];
+_group_counter = 0;
+
+_vehicles_russia_names = ["rhs_bmd2", "CUP_O_BMP2_RU", "CUP_O_BMP3_RU", "CUP_O_GAZ_Vodnik_BPPU_RU", "CUP_O_BTR90_RU", "CUP_O_UAZ_MG_RU", "CUP_O_T90_RU", "CUP_O_T72_RU", "CUP_O_2S6M_RU", "rhs_t90a_tv", "rhs_t80uk", "rhs_prp3_tv", "rhs_t72ba_tv", "rhs_btr60_msv", "rhs_bmp3m_msv", "rhs_tigr_sts_3camo_msv"];
 
 while {alive player} do
 {
@@ -16,7 +22,7 @@ while {alive player} do
 
 		for "_i" from 0 to (_group_size - 1) do
 		{
-			_veh = createVehicle ["rhs_bmd2", position player, _markers, 10, ""];
+			_veh = createVehicle [, position player, _markers, 10, ""];
 			createVehicleCrew _veh;				
 			_vehcrew = crew _veh; //this will give you an array which has the crew members.
 			_vehcrew join _this_group;			

@@ -42,4 +42,5 @@ B_40mm_GPR
 ACE_B_35mm_ABM
 rhs_ammo_3WOF27
 Sh_125mm_APFSDS_T_Green
+"M_Titan_AT"
 */

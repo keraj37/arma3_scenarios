@@ -22,16 +22,23 @@ while {alive player} do
 
 		for "_i" from 0 to (_group_size - 1) do
 		{
-			_veh = createVehicle [, position player, _markers, 10, ""];
+			_this_veh_name = selectRandom _vehicles_russia_names;
+		
+			_veh = createVehicle [_this_veh_name, position player, _markers, 10, ""];
 			createVehicleCrew _veh;				
 			_vehcrew = crew _veh; //this will give you an array which has the crew members.
 			_vehcrew join _this_group;			
 			
-			//_vehgrp = group driver _veh; //you get the convoy leader's group with this little command
-			//_veh2crew join _vehgrp; //Array is needed for join command.
-
-			//_waypoint0 = _vehgrp addWaypoint [getMarkerPos "move_marker",0];
-			//_waypoint0 setWaypointType "Move"; 			
+			{
+				_x setSkill ["aimingspeed", 1];
+				_x setSkill ["spotdistance", 1];
+				_x setSkill ["aimingaccuracy", 1];
+				_x setSkill ["aimingshake", 1];
+				_x setSkill ["spottime", 1];
+				_x setSkill ["spotdistance", 1];
+				_x setSkill ["commanding", 1];
+				_x setSkill ["general", 1];
+			} forEach _vehcrew;						
 		};		
 
 		_wp = _this_group addWaypoint [position player, 0];

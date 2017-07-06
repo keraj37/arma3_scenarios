@@ -14,6 +14,9 @@ while {alive player} do
 	while {_group_counter < _max_groups} do
 	{
 		_this_group = Creategroup EAST;	
+		
+		hint "Armored group detected!";
+		
 		_all_groups = _all_groups + [_this_group];
 		
 		_group_size = floor(random (_max_group_size - _min_group_size)) + _min_group_size;

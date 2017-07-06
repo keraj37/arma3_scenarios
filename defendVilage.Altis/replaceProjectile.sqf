@@ -3,7 +3,7 @@ replaceProjectile =
 	_pos = getPosATL _this;
 	_finalPos = [_pos select 0, _pos select 1, (_pos select 2) + 2];
 
-	_nProjectile = createVehicle["R_230mm_HE", _finalPos,[], 0, "CAN_COLLIDE"];	
+	_nProjectile = createVehicle["Sh_125mm_HEAT", _finalPos,[], 0, "CAN_COLLIDE"];	
 	_direction = _this weaponDirection currentWeapon _this;
 	_velocity = _direction vectorMultiply 2000;
 	_nProjectile setVelocity _velocity;

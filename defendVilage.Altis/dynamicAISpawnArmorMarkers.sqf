@@ -1,6 +1,6 @@
 _max_groups = 10; 
-_max_group_size = 3;
-_min_group_size = 1;
+_max_group_size = 5;
+_min_group_size = 2;
 
 _markers = allMapMarkers;
 
@@ -28,14 +28,14 @@ while {alive player} do
 			_vehcrew join _this_group;			
 			
 			{
-				_x setSkill ["aimingspeed", 1];
-				_x setSkill ["spotdistance", 1];
-				_x setSkill ["aimingaccuracy", 1];
-				_x setSkill ["aimingshake", 1];
-				_x setSkill ["spottime", 1];
-				_x setSkill ["spotdistance", 1];
-				_x setSkill ["commanding", 1];
-				_x setSkill ["general", 1];
+				_x setSkill ["aimingspeed", 0.6];
+				_x setSkill ["spotdistance", 0.6];
+				_x setSkill ["aimingaccuracy", 0.6];
+				_x setSkill ["aimingshake", 0.6];
+				_x setSkill ["spottime", 0.6];
+				_x setSkill ["spotdistance", 0.6];
+				_x setSkill ["commanding", 0.6];
+				_x setSkill ["general", 0.6];
 			} forEach _vehcrew;						
 		};		
 

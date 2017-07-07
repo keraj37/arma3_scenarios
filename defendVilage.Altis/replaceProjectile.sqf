@@ -1,10 +1,11 @@
 replaceProjectile =   
 {     
-	_pos = getPosATL _this;
-	_finalPos = [_pos select 0, _pos select 1, (_pos select 2) + 2];
-
-	_nProjectile = createVehicle["Sh_125mm_HEAT", _finalPos,[], 0, "CAN_COLLIDE"];	
+	_pos = getPos _this;
 	_direction = _this weaponDirection currentWeapon _this;
+	_finalPos = _pos vectorAdd _direction;
+
+	_nProjectile = createVehicle["B_20mm", _finalPos,[], 0, "CAN_COLLIDE"];	
+	
 	_velocity = _direction vectorMultiply 2000;
 	_nProjectile setVelocity _velocity;
 	_this setVehicleAmmo 1;

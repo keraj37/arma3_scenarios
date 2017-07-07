@@ -1,4 +1,4 @@
-_max_groups = 10; 
+_max_groups = 4; 
 _max_group_size = 5;
 _min_group_size = 2;
 

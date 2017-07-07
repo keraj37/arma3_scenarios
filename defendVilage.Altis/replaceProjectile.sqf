@@ -3,8 +3,9 @@ replaceProjectile =
 	_pos = getPos _this;
 	_direction = _this weaponDirection currentWeapon _this;
 	_finalPos = _pos vectorAdd _direction;
+	_finalPos = _finalPos vectorAdd [0, 0, 1.5];
 
-	_nProjectile = createVehicle["B_20mm", _finalPos,[], 0, "CAN_COLLIDE"];	
+	_nProjectile = createVehicle["Sh_125mm_APFSDS_T_Green", _finalPos,[], 0, "CAN_COLLIDE"];	
 	
 	_velocity = _direction vectorMultiply 2000;
 	_nProjectile setVelocity _velocity;

@@ -31,14 +31,14 @@ while {alive player} do
 			_vehcrew join _this_group;			
 			
 			{
-				_x setSkill ["aimingspeed", 0.6];
-				_x setSkill ["spotdistance", 0.6];
-				_x setSkill ["aimingaccuracy", 0.6];
-				_x setSkill ["aimingshake", 0.6];
-				_x setSkill ["spottime", 0.6];
-				_x setSkill ["spotdistance", 0.6];
-				_x setSkill ["commanding", 0.6];
-				_x setSkill ["general", 0.6];
+				_x setSkill ["aimingspeed", 0.8];
+				_x setSkill ["spotdistance", 0.8];
+				_x setSkill ["aimingaccuracy", 0.8];
+				_x setSkill ["aimingshake", 0.8];
+				_x setSkill ["spottime", 0.8];
+				_x setSkill ["spotdistance", 0.8];
+				_x setSkill ["commanding", 0.8];
+				_x setSkill ["general", 0.8];
 			} forEach _vehcrew;						
 		};		
 

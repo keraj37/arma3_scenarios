@@ -1,6 +1,6 @@
 replaceProjectile =   
 {     
-	_pos = getPos _this;
+	_pos = getPosATL _this;
 	_direction = _this weaponDirection currentWeapon _this;
 	_finalPos = _pos vectorAdd _direction;
 	_finalPos = _finalPos vectorAdd [0, 0, 1.5];

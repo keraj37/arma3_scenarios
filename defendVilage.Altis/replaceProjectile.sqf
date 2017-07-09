@@ -5,7 +5,7 @@ replaceProjectile =
 	_finalPos = _pos vectorAdd _direction;
 	_finalPos = _finalPos vectorAdd [0, 0, 1.5];
 
-	_nProjectile = createVehicle["B_40mm_GPR", _finalPos,[], 0, "CAN_COLLIDE"];	
+	_nProjectile = createVehicle["Sh_125mm_HEAT", _finalPos,[], 0, "CAN_COLLIDE"];	
 	
 	_velocity = _direction vectorMultiply 2000;
 	_nProjectile setVelocity _velocity;
